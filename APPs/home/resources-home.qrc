@@ -1,0 +1,16 @@
+<RCC>
+    <qresource prefix="/">
+        <file>resources-home/home_19.jpg</file>
+        <file>resources-home/home_21.jpg</file>
+        <file>resources-home/home_23.jpg</file>
+        <file>resources-home/home_25.jpg</file>
+        <file>resources-home/home_35.jpg</file>
+        <file>resources-home/home_37.jpg</file>
+        <file>resources-home/home_38.jpg</file>
+        <file>resources-home/home_39.jpg</file>
+        <file>resources-home/home_49.jpg</file>
+        <file>resources-home/home_50.jpg</file>
+        <file>resources-home/home_51.jpg</file>
+        <file>resources-home/home_52.jpg</file>
+    </qresource>
+</RCC>

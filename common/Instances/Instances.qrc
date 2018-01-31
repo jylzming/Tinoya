@@ -1,0 +1,25 @@
+<RCC>
+    <qresource prefix="/Instances/Controls">
+        <file alias="ImageButton.qml">Controls/ImageButton.qml</file>
+    </qresource>
+    <qresource prefix="/Instances/Core">
+        <file alias="Window.qml">Core/Window.qml</file>
+        <file alias="StatusBar.qml">Core/StatusBar.qml</file>
+        <file alias="Page.qml">Core/Page.qml</file>
+        <file alias="MultiApplications.qml">Core/MultiApplications.qml</file>
+        <file alias="VirtualApplication.qml">Core/VirtualApplication.qml</file>
+        <file alias="MultiApplicationsNavBar.qml">Core/MultiApplicationsNavBar.qml</file>
+        <file alias="PageTransitionDelegate.qml">Core/PageTransitionDelegate.qml</file>
+        <file alias="ApplicationTransitionDelegate.qml">Core/ApplicationTransitionDelegate.qml</file>
+        <file alias="TabView.qml">Core/TabView.qml</file>
+    </qresource>
+    <qresource prefix="/">
+        <file>resources/btnClose1.png</file>
+        <file>resources/btnMessage1.png</file>
+        <file>resources/btnMini1.png</file>
+        <file>resources/btnSetting1.png</file>
+        <file>resources/tinoya.png</file>
+        <file>resources/biohazard.png</file>
+        <file>resources/message.png</file>
+    </qresource>
+</RCC>

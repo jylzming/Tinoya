@@ -1,0 +1,7 @@
+<RCC>
+    <qresource prefix="/">
+        <file>resources-light/lighton.png</file>
+        <file>resources-light/lightoff.png</file>
+        <file>resources-light/brightness.png</file>
+    </qresource>
+</RCC>

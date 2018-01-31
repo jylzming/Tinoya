@@ -1,0 +1,5 @@
+<RCC>
+    <qresource prefix="/light">
+        <file>Application.qml</file>
+    </qresource>
+</RCC>
