@@ -1,4 +1,5 @@
 ﻿import QtQuick 2.0
+import QtQuick 2.7
 import QtQuick.Controls 1.4
 import QtQuick.Layouts 1.1
 import QtQuick.Controls 2.0
@@ -47,9 +48,14 @@ ICore.Page{
                 height: 200
                 source: "qrc:/resources-home/home_19.jpg"
                 Layout.columnSpan: 2
-                onReleased: {
-                    console.log("lightImg click!");
-                    application.multiApplications.changeApplication("light");
+                MouseArea {
+                    anchors.fill: parent;
+                    cursorShape: Qt.PointingHandCursor;
+                    acceptedButtons: Qt.LeftButton
+                    onReleased: {
+                        console.log("lightImg click!");
+                        application.multiApplications.changeApplication("light");
+                    }
                 }
             }
 
@@ -58,10 +64,15 @@ ICore.Page{
                 width: 200
                 height: 200
                 source: "qrc:/resources-home/home_21.jpg"
-                onReleased: {
-                        console.log("warningImg click!");
-                        ScoketCtl.sendData(1)
-                    }
+                MouseArea {
+                    anchors.fill: parent;
+                    cursorShape: Qt.PointingHandCursor;
+                    acceptedButtons: Qt.LeftButton
+                    onReleased: {
+                            console.log("warningImg click!");
+                            ScoketCtl.sendData(1)
+                        }
+                }
             }
 
             IControls.ImageButton {
@@ -69,10 +80,16 @@ ICore.Page{
                 width: 200
                 height: 200
                 source: "qrc:/resources-home/home_23.jpg"
-                onReleased: {
-                        console.log("motoImg click!");
-                        ScoketCtl.sendData(2)
-                    }
+                MouseArea {
+                    anchors.fill: parent;
+                    cursorShape: Qt.PointingHandCursor;
+                    acceptedButtons: Qt.LeftButton
+                    onReleased: {
+                            console.log("motoImg click!");
+                            ScoketCtl.sendData(2)
+                        }
+                }
+
             }
 
             IControls.ImageButton {
@@ -80,10 +97,15 @@ ICore.Page{
                 width: 200
                 height: 200
                 source: "qrc:/resources-home/home_25.jpg"
-                onReleased: {
-                        console.log("policeImg click!");
-                        ScoketCtl.sendData(3)
-                    }
+                MouseArea {
+                    anchors.fill: parent;
+                    cursorShape: Qt.PointingHandCursor;
+                    acceptedButtons: Qt.LeftButton
+                    onReleased: {
+                            console.log("policeImg click!");
+                            ScoketCtl.sendData(3)
+                        }
+                }
             }
 
             IControls.ImageButton {
@@ -91,10 +113,15 @@ ICore.Page{
                 width: 200
                 height: 200
                 source: "qrc:/resources-home/home_35.jpg"
-                onReleased: {
-                        console.log("dangerImg click!");
-                        ScoketCtl.sendData(4)
-                    }
+                MouseArea {
+                    anchors.fill: parent;
+                    cursorShape: Qt.PointingHandCursor;
+                    acceptedButtons: Qt.LeftButton
+                    onReleased: {
+                            console.log("dangerImg click!");
+                            ScoketCtl.sendData(4)
+                        }
+                }
             }
 
             IControls.ImageButton {
@@ -102,10 +129,15 @@ ICore.Page{
                 width: 200
                 height: 200
                 source: "qrc:/resources-home/home_37.jpg"
-                onReleased: {
-                        console.log("wifiImg click!");
-                        ScoketCtl.sendData(5)
-                    }
+                MouseArea {
+                    anchors.fill: parent;
+                    cursorShape: Qt.PointingHandCursor;
+                    acceptedButtons: Qt.LeftButton
+                    onReleased: {
+                            console.log("wifiImg click!");
+                            ScoketCtl.sendData(5)
+                        }
+                }
             }
 
             IControls.ImageButton {
@@ -114,10 +146,15 @@ ICore.Page{
                 height: 200
                 source: "qrc:/resources-home/home_38.jpg"
                 Layout.columnSpan: 2
-                onReleased: {
-                        console.log("carparkImg click!");
-                        ScoketCtl.sendData(6)
-                    }
+                MouseArea {
+                    anchors.fill: parent;
+                    cursorShape: Qt.PointingHandCursor;
+                    acceptedButtons: Qt.LeftButton
+                    onReleased: {
+                            console.log("carparkImg click!");
+                            ScoketCtl.sendData(6)
+                        }
+                }
             }
 
             IControls.ImageButton {
@@ -125,10 +162,15 @@ ICore.Page{
                 width: 200
                 height: 200
                 source: "qrc:/resources-home/home_39.jpg"
-                onReleased: {
-                        console.log("floodImg click!");
-                        ScoketCtl.sendData(7)
-                    }
+                MouseArea {
+                    anchors.fill: parent;
+                    cursorShape: Qt.PointingHandCursor;
+                    acceptedButtons: Qt.LeftButton
+                    onReleased: {
+                            console.log("floodImg click!");
+                            ScoketCtl.sendData(7)
+                        }
+                }
             }
 
             IControls.ImageButton {
@@ -136,10 +178,15 @@ ICore.Page{
                 width: 200
                 height: 200
                 source: "qrc:/resources-home/home_51.jpg"
-                onReleased: {
-                        console.log("questionImg click!");
-                        ScoketCtl.sendData(8)
-                    }
+                MouseArea {
+                    anchors.fill: parent;
+                    cursorShape: Qt.PointingHandCursor;
+                    acceptedButtons: Qt.LeftButton
+                    onReleased: {
+                            console.log("questionImg click!");
+                            ScoketCtl.sendData(8)
+                        }
+                }
             }
 
             IControls.ImageButton {
@@ -148,10 +195,15 @@ ICore.Page{
                 height: 200
                 source: "qrc:/resources-home/home_52.jpg"
                 Layout.columnSpan: 2
-                onReleased: {
-                        console.log("cameraImg click!");
-                        ScoketCtl.sendData(9)
-                    }
+                MouseArea {
+                    anchors.fill: parent;
+                    cursorShape: Qt.PointingHandCursor;
+                    acceptedButtons: Qt.LeftButton
+                    onReleased: {
+                            console.log("cameraImg click!");
+                            ScoketCtl.sendData(9)
+                        }
+                }
             }
 
             IControls.ImageButton {
@@ -159,10 +211,15 @@ ICore.Page{
                 width: 200
                 height: 200
                 source: "qrc:/resources-home/home_49.jpg"
-                onReleased: {
-                        console.log("dustImg click!");
-                        ScoketCtl.sendData(10)
-                    }
+                MouseArea {
+                    anchors.fill: parent;
+                    cursorShape: Qt.PointingHandCursor;
+                    acceptedButtons: Qt.LeftButton
+                    onReleased: {
+                            console.log("dustImg click!");
+                            ScoketCtl.sendData(10)
+                        }
+                }
             }
 
             IControls.ImageButton {
@@ -170,10 +227,15 @@ ICore.Page{
                 width: 200
                 height: 200
                 source: "qrc:/resources-home/home_50.jpg"
-                onReleased: {
-                        console.log("slideImg click!");
-                        ScoketCtl.sendData(11)
-                    }
+                MouseArea {
+                    anchors.fill: parent;
+                    cursorShape: Qt.PointingHandCursor;
+                    acceptedButtons: Qt.LeftButton
+                    onReleased: {
+                            console.log("slideImg click!");
+                            ScoketCtl.sendData(11)
+                        }
+                }
             }
         }
     }

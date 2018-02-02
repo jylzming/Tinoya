@@ -5,19 +5,53 @@ import QtQuick 2.7
 import QtQuick.Controls 1.4
 import QtQuick.Controls.Styles 1.2
 import QtQuick 2.2
+import QtWebSockets 1.1
+
 ICore.Page{
     anchors.fill: parent
-
     Rectangle{
         id: lightRect
         width: parent.width
         height: parent.height
         color: "#CCCCCC"
+
+        WebSocket {
+            id: socket
+            url: "ws://192.168.1.108:777"
+            active: true
+            onTextMessageReceived: {
+                messageBox.text = messageBox.text + "\nReceived message: " + message
+            }
+            onStatusChanged: if (socket.status == WebSocket.Error) {
+                                 console.log("Error: " + socket.errorString)
+                             } else if (socket.status == WebSocket.Open) {
+                                 socket.sendTextMessage("Hello World")
+                             } else if (socket.status == WebSocket.Closed) {
+                                 messageBox.text += "\nSocket closed"
+                             }    
+        }
+        Text {
+            id: messageBox
+            height: 30
+            width: parent.width
+            text: socket.status == WebSocket.Open ? qsTr("Socket status:Open!") : qsTr("Socket status:Closed!")
+            anchors.centerIn: parent
+            MouseArea{
+                anchors.fill: parent
+                cursorShape: "PointingHandCursor"
+                onClicked: {
+                    socket.active = true
+                    socket.sendTextMessage(qsTr("Hello Ming!\n"))
+                }
+            }
+        }
         //区域栏
         Rectangle{
             id: zone
             width: parent.width
             height: zoneRow.height+10
+            anchors.top: messageBox.bottom
+            anchors.topMargin: 20
             Row{
                 id: zoneRow
                 spacing: 10
