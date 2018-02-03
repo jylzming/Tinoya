@@ -231,7 +231,11 @@ Private.Container {
 
         if (!opts.immediate && currentAnimation) {
             animating = true;
+            console.debug("currentAnimation.start -- BEGIN")
+            inEl.item.enabled = false
+            outEl.item.enabled = false
             currentAnimation.start();
+            console.debug("currentAnimation.start -- END")
             itemShowing(inEl.id);
             itemHiding(outEl.id);
             currentAnimation.stopped.connect(function () {
@@ -247,6 +251,8 @@ Private.Container {
                     outEl.hasHiden = true;
                     itemFirstHiden(outEl.id);
                 }
+                inEl.item.enabled = true
+                outEl.item.enabled = true
                 __doAfterAnimation(inEl, outEl, opts, ids);
                 if (currentAnimation) currentAnimation.destroy();
             });

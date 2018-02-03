@@ -28,10 +28,10 @@ Window {
     Loader {
         id: bgLoader
         active: true
-        anchors.fill: parent  //root
+        anchors.fill: parent//root
         sourceComponent: Component {
             Image {
-                anchors.fill: parent
+                anchors.fill: parent//root
                 source: bgSource
             }
         }

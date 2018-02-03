@@ -12,6 +12,7 @@
         <file alias="PageTransitionDelegate.qml">Core/PageTransitionDelegate.qml</file>
         <file alias="ApplicationTransitionDelegate.qml">Core/ApplicationTransitionDelegate.qml</file>
         <file alias="TabView.qml">Core/TabView.qml</file>
+        <file>LeftBar.qml</file>
     </qresource>
     <qresource prefix="/">
         <file>resources/btnClose1.png</file>
@@ -21,5 +22,17 @@
         <file>resources/tinoya.png</file>
         <file>resources/biohazard.png</file>
         <file>resources/message.png</file>
+        <file>resources/Camera.bmp</file>
+        <file>resources/carStop.bmp</file>
+        <file>resources/danger.bmp</file>
+        <file>resources/dustyJk.bmp</file>
+        <file>resources/HuaPoJK.bmp</file>
+        <file>resources/jiankong.bmp</file>
+        <file>resources/JiDianJK.bmp</file>
+        <file>resources/JinliXunCha.bmp</file>
+        <file>resources/LedJieNeng.bmp</file>
+        <file>resources/LiangDong.bmp</file>
+        <file>resources/NeiLaoJK.bmp</file>
+        <file>resources/WifiGG.bmp</file>
     </qresource>
 </RCC>

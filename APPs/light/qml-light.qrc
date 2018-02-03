@@ -2,5 +2,6 @@
     <qresource prefix="/light">
         <file>Application.qml</file>
         <file>MainPage.qml</file>
+        <file>Light.qml</file>
     </qresource>
 </RCC>

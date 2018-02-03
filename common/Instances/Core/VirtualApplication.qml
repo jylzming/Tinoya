@@ -30,7 +30,7 @@ UCore.VirtualApplication {
             multiApplications.currentApplicationChanged.disconnect(handler);
 
             var appWindow = multiApplications.appWindow;
-            var currentApplication = multiApplications.currentApplicationInfo();//.item;
+            var currentApplication = multiApplications.currentApplicationInfo()//.item;
             if (currentApplication) {
                 var pageSettings = currentApplication.pages[currentApplication.currentPage];
 
@@ -38,8 +38,6 @@ UCore.VirtualApplication {
                     // 判断是否隐藏状态栏返回键
                     if (appWindow.statusBar){
                         appWindow.statusBar.hideBackBtn = !!pageSettings.hideBackBtn;
-                        appWindow.statusBar.btnIsVisiable = pageSettings.btnIsVisiable;
-                        console.debug("wangru onApplicationReadyShow.btnIsVisiable: ",appWindow.statusBar.btnIsVisiable);
                     }
 
                     // 判断是否隐藏导航栏

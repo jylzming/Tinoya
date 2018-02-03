@@ -1,9 +1,7 @@
 ﻿import QtQuick 2.0
-import QtQuick 2.7
 import QtQuick.Controls 1.4
 import QtQuick.Layouts 1.1
-import QtQuick.Controls 2.0
-import QtGraphicalEffects 1.0
+
 import 'qrc:/Instances/Core' as ICore
 import 'qrc:/Instances/Controls' as IControls
 
@@ -32,6 +30,13 @@ ICore.Page{
                 verticalCenter: parent.verticalCenter
                 horizontalCenter: parent.horizontalCenter
             }
+            MouseArea{
+                anchors.fill: parent
+                onReleased: {
+                    console.log("Gridlayout click!");
+                }
+            }
+
             Text {
                 text: "天眼联动平台    "    //a basic greeting
                 font.family: "宋体"
@@ -55,6 +60,7 @@ ICore.Page{
                     onReleased: {
                         console.log("lightImg click!");
                         application.multiApplications.changeApplication("light");
+                        application.multiApplications.changeApplication("LeftBar");
                     }
                 }
             }
@@ -68,10 +74,12 @@ ICore.Page{
                     anchors.fill: parent;
                     cursorShape: Qt.PointingHandCursor;
                     acceptedButtons: Qt.LeftButton
-                    onReleased: {
-                            console.log("warningImg click!");
-                            ScoketCtl.sendData(1)
-                        }
+                    propagateComposedEvents: true
+                    onClicked: {
+                        mouse.accepted = false
+                        console.log("warningImg click!");
+                        ScoketCtl.sendData(1)
+                    }
                 }
             }
 
@@ -85,9 +93,9 @@ ICore.Page{
                     cursorShape: Qt.PointingHandCursor;
                     acceptedButtons: Qt.LeftButton
                     onReleased: {
-                            console.log("motoImg click!");
-                            ScoketCtl.sendData(2)
-                        }
+                        console.log("motoImg click!");
+                        ScoketCtl.sendData(2)
+                    }
                 }
 
             }
@@ -102,9 +110,9 @@ ICore.Page{
                     cursorShape: Qt.PointingHandCursor;
                     acceptedButtons: Qt.LeftButton
                     onReleased: {
-                            console.log("policeImg click!");
-                            ScoketCtl.sendData(3)
-                        }
+                        console.log("policeImg click!");
+                        ScoketCtl.sendData(3)
+                    }
                 }
             }
 
@@ -118,9 +126,9 @@ ICore.Page{
                     cursorShape: Qt.PointingHandCursor;
                     acceptedButtons: Qt.LeftButton
                     onReleased: {
-                            console.log("dangerImg click!");
-                            ScoketCtl.sendData(4)
-                        }
+                        console.log("dangerImg click!");
+                        ScoketCtl.sendData(4)
+                    }
                 }
             }
 
@@ -134,9 +142,9 @@ ICore.Page{
                     cursorShape: Qt.PointingHandCursor;
                     acceptedButtons: Qt.LeftButton
                     onReleased: {
-                            console.log("wifiImg click!");
-                            ScoketCtl.sendData(5)
-                        }
+                        console.log("wifiImg click!");
+                        ScoketCtl.sendData(5)
+                    }
                 }
             }
 
@@ -151,9 +159,9 @@ ICore.Page{
                     cursorShape: Qt.PointingHandCursor;
                     acceptedButtons: Qt.LeftButton
                     onReleased: {
-                            console.log("carparkImg click!");
-                            ScoketCtl.sendData(6)
-                        }
+                        console.log("carparkImg click!");
+                        ScoketCtl.sendData(6)
+                    }
                 }
             }
 
@@ -167,9 +175,9 @@ ICore.Page{
                     cursorShape: Qt.PointingHandCursor;
                     acceptedButtons: Qt.LeftButton
                     onReleased: {
-                            console.log("floodImg click!");
-                            ScoketCtl.sendData(7)
-                        }
+                        console.log("floodImg click!");
+                        ScoketCtl.sendData(7)
+                    }
                 }
             }
 
@@ -183,9 +191,9 @@ ICore.Page{
                     cursorShape: Qt.PointingHandCursor;
                     acceptedButtons: Qt.LeftButton
                     onReleased: {
-                            console.log("questionImg click!");
-                            ScoketCtl.sendData(8)
-                        }
+                        console.log("questionImg click!");
+                        ScoketCtl.sendData(8)
+                    }
                 }
             }
 
@@ -200,9 +208,9 @@ ICore.Page{
                     cursorShape: Qt.PointingHandCursor;
                     acceptedButtons: Qt.LeftButton
                     onReleased: {
-                            console.log("cameraImg click!");
-                            ScoketCtl.sendData(9)
-                        }
+                        console.log("cameraImg click!");
+                        ScoketCtl.sendData(9)
+                    }
                 }
             }
 
@@ -216,9 +224,9 @@ ICore.Page{
                     cursorShape: Qt.PointingHandCursor;
                     acceptedButtons: Qt.LeftButton
                     onReleased: {
-                            console.log("dustImg click!");
-                            ScoketCtl.sendData(10)
-                        }
+                        console.log("dustImg click!");
+                        ScoketCtl.sendData(10)
+                    }
                 }
             }
 
@@ -232,11 +240,12 @@ ICore.Page{
                     cursorShape: Qt.PointingHandCursor;
                     acceptedButtons: Qt.LeftButton
                     onReleased: {
-                            console.log("slideImg click!");
-                            ScoketCtl.sendData(11)
-                        }
+                        console.log("slideImg click!");
+                        ScoketCtl.sendData(11)
+                    }
                 }
             }
         }
     }
+
 }

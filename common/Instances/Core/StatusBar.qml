@@ -1,7 +1,5 @@
 ﻿import QtQuick 2.5
 import QtQuick.Window 2.0
-import QtQuick.Controls 1.4
-import QtQuick.Layouts 1.1
 import 'qrc:/UI/Private' as Private
 import 'qrc:/UI/Controls' as UControls
 import 'qrc:/UI/Core' as UCore
@@ -15,16 +13,8 @@ Private.Control {
     anchors.left: parent.left
     height: 70
     property var appWindow: null
-    property VirtualApplication application: null
+    property var hideBackBtn: null
     signal back
-    Loader{
-        id: pageLoader
-    }
-
-    function changePage2Home(){
-        pageLoader.source = "qrc:/home/home.qml"
-        pageLoader.update()
-    }
     //标题部分
     Rectangle{
         id: titleBar;
@@ -81,15 +71,12 @@ Private.Control {
             MouseArea{
                 id: logoArea;
                 anchors.fill: parent;
-                cursorShape: "PointingHandCursor"
                 hoverEnabled: true;
                 propagateComposedEvents: false
                 acceptedButtons: Qt.LeftButton;
                 onClicked: {
                     console.log("Logo click!");
-                    //application.changePage("qrc:/home/home.qml")
-                    //application.multiApplications.changeApplication("home");
-                    changePage2Home()
+
                 }
             }
         }
@@ -115,10 +102,10 @@ Private.Control {
                     anchors.fill: parent;
                     hoverEnabled: true;
                     propagateComposedEvents: false
-                    cursorShape: "PointingHandCursor"
                     acceptedButtons: Qt.LeftButton;
                     onClicked: {
                         console.log("LogoName click!");
+
                     }
                 }
             }
@@ -136,7 +123,6 @@ Private.Control {
                     anchors.fill: parent;
                     hoverEnabled: true;
                     propagateComposedEvents: false
-                    cursorShape: "PointingHandCursor"
                     acceptedButtons: Qt.LeftButton;
                     onClicked: {
                         console.log("LogoName click!");
@@ -164,7 +150,6 @@ Private.Control {
                 hoverEnabled: true;
                 propagateComposedEvents: false
                 acceptedButtons: Qt.LeftButton;
-                cursorShape: "PointingHandCursor"
                 onClicked: {
                     console.log("userName click!");
 
@@ -186,9 +171,9 @@ Private.Control {
                 hoverEnabled: true;
                 propagateComposedEvents: false
                 acceptedButtons: Qt.LeftButton;
-                cursorShape: "PointingHandCursor"
                 onClicked: {
                     console.log("SettingImg click!");
+
                 }
             }
         }

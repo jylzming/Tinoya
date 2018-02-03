@@ -1,14 +1,22 @@
 ﻿import QtQuick 2.0
-import 'qrc:/Instances/Core' as ICore
-import QtQuick 2.0
-import QtQuick 2.7
 import QtQuick.Controls 1.4
-import QtQuick.Controls.Styles 1.2
-import QtQuick 2.2
 import QtWebSockets 1.1
+import 'qrc:/Instances/Core' as ICore
 
 ICore.Page{
     anchors.fill: parent
+
+/*    Rectangle {
+        anchors.fill: parent
+        color: 'blue'
+
+        MouseArea{
+            anchors.fill: parent
+            onClicked: {
+                application.changePage('light');
+            }
+        }
+    }*/
     Rectangle{
         id: lightRect
         width: parent.width
@@ -28,14 +36,13 @@ ICore.Page{
                                  socket.sendTextMessage("Hello World")
                              } else if (socket.status == WebSocket.Closed) {
                                  messageBox.text += "\nSocket closed"
-                             }    
+                             }
         }
         Text {
             id: messageBox
             height: 30
             width: parent.width
             text: socket.status == WebSocket.Open ? qsTr("Socket status:Open!") : qsTr("Socket status:Closed!")
-            anchors.centerIn: parent
             MouseArea{
                 anchors.fill: parent
                 cursorShape: "PointingHandCursor"
@@ -161,7 +168,7 @@ ICore.Page{
         }
         //工具栏
         Rectangle{
-            id: lightCntlRect
+            id: cntlRect
             anchors.top: lightControlRect.bottom
             width: parent.width
             height: 30
@@ -293,141 +300,139 @@ ICore.Page{
                 }
             }
         }
-        ListModel
-        {
-            id: tableModel
-            ListElement {
-                checked: true
-                gateway: "LinoyaGW01"
-                address: "001"
-                lightID: "8002"
-                lightStat: "off"
-                netStat: "offline"
-                dimming: "--"
-                voltage: "--"
-                current: "--"
-                power: "--"
-                updateTime: "--"
-            }
-            ListElement {
-                checked: false
-                gateway: "LinoyaGW01"
-                address: "002"
-                lightID: "8003"
-                lightStat: "off"
-                netStat: "offline"
-                dimming: "--"
-                voltage: "--"
-                current: "--"
-                power: "--"
-                updateTime: "--"
-            }
-            ListElement {
-                checked: false
-                gateway: "LinoyaGW01"
-                address: "003"
-                lightID: "8004"
-                lightStat: "off"
-                netStat: "offline"
-                dimming: "--"
-                voltage: "--"
-                current: "--"
-                power: "--"
-                updateTime: "--"
-            }
-        }
-        TableView
-        {
-            id: tableView
-            model: tableModel
+        Rectangle {
             width: parent.width
             height: parent.height
-            anchors.top: lightCntlRect.bottom
-            anchors.left: parent.left
-            anchors.bottom: parent.bottom
-            TableViewColumn
-            {
-                id: checkedColumn
-                role: "checked"
-                title: qsTr( "Checked" )
-                width: parent.width/11
-            }
-            TableViewColumn {
-                role: "gateway"
-                title: qsTr("网关")
-                width: parent.width/11
-            }
-            TableViewColumn {
-                role: "address"
-                title: qsTr("地址")
-                width: parent.width/11
-            }
-            TableViewColumn {
-                role: "lightID"
-                title: qsTr("ID")
-                width: parent.width/11
-            }
-            TableViewColumn {
-                role: "lightStat"
-                title: qsTr("路灯状态")
-                width: parent.width/11
-            }
-            TableViewColumn {
-                role: "netStat"
-                title: qsTr("网络状态")
-                width: parent.width/11
-            }
-            TableViewColumn {
-                role: "dimming"
-                title: qsTr("亮度")
-                width: parent.width/11
-            }
-            TableViewColumn {
-                role: "voltage"
-                title: qsTr("电压")
-                width: parent.width/11
-            }
-            TableViewColumn {
-                role: "current"
-                title: qsTr("电流")
-                width: parent.width/11
-            }
-            TableViewColumn {
-                role: "power"
-                title: qsTr("功率")
-                width: parent.width/11
-            }
-            TableViewColumn {
-                role: "updateTime"
-                title: qsTr("更新时间")
-                width: parent.width/11
-            }
-
-            itemDelegate: Item
-            {
-                height: 30
-                CheckBox
-                {
-                    anchors.centerIn: parent
-                    checked: styleData.value
-                    visible: isCheckColumn( styleData.column )
+            anchors.top: cntlRect.bottom
+            //anchors.fill: parent
+            ListModel {
+                id: tableModel
+                ListElement {
+                    checked: true
+                    gateway: "LinoyaGW01"
+                    address: "001"
+                    lightID: "8002"
+                    lightStat: "off"
+                    netStat: "offline"
+                    dimming: "--"
+                    voltage: "--"
+                    current: "--"
+                    power: "--"
+                    updateTime: "--"
                 }
-                Text
-                {
-                    anchors.left: parent.left
-                    anchors.verticalCenter: parent.verticalCenter
-                    text: styleData.value
-                    //color: isCheckColumn( styleData.column )? "black": styleData.value
-                    visible: !isCheckColumn( styleData.column )
+                ListElement {
+                    checked: false
+                    gateway: "LinoyaGW01"
+                    address: "002"
+                    lightID: "8003"
+                    lightStat: "off"
+                    netStat: "offline"
+                    dimming: "--"
+                    voltage: "--"
+                    current: "--"
+                    power: "--"
+                    updateTime: "--"
+                }
+                ListElement {
+                    checked: false
+                    gateway: "LinoyaGW01"
+                    address: "003"
+                    lightID: "8004"
+                    lightStat: "off"
+                    netStat: "offline"
+                    dimming: "--"
+                    voltage: "--"
+                    current: "--"
+                    power: "--"
+                    updateTime: "--"
+                }
+            }
+            TableView {
+                id: tableView
+                model: tableModel
+                width: parent.width
+                height: parent.height
+                TableViewColumn {
+                    id: checkedColumn
+                    role: "checked"
+                    title: qsTr( "Checked" )
+                    width: parent.width/11
+                }
+                TableViewColumn {
+                    role: "gateway"
+                    title: qsTr("网关")
+                    width: parent.width/11
+                }
+                TableViewColumn {
+                    role: "address"
+                    title: qsTr("地址")
+                    width: parent.width/11
+                }
+                TableViewColumn {
+                    role: "lightID"
+                    title: qsTr("ID")
+                    width: parent.width/11
+                }
+                TableViewColumn {
+                    role: "lightStat"
+                    title: qsTr("路灯状态")
+                    width: parent.width/11
+                }
+                TableViewColumn {
+                    role: "netStat"
+                    title: qsTr("网络状态")
+                    width: parent.width/11
+                }
+                TableViewColumn {
+                    role: "dimming"
+                    title: qsTr("亮度")
+                    width: parent.width/11
+                }
+                TableViewColumn {
+                    role: "voltage"
+                    title: qsTr("电压")
+                    width: parent.width/11
+                }
+                TableViewColumn {
+                    role: "current"
+                    title: qsTr("电流")
+                    width: parent.width/11
+                }
+                TableViewColumn {
+                    role: "power"
+                    title: qsTr("功率")
+                    width: parent.width/11
+                }
+                TableViewColumn {
+                    role: "updateTime"
+                    title: qsTr("更新时间")
+                    width: parent.width/11
                 }
 
-                function isCheckColumn( columnIndex )
-                {
-                    return tableView.getColumn( columnIndex ) === checkedColumn
+                itemDelegate: Item {
+                    height: 30
+                    CheckBox
+                    {
+                        anchors.centerIn: parent
+                        checked: styleData.value
+                        visible: isCheckColumn( styleData.column )
+                    }
+                    Text
+                    {
+                        anchors.left: parent.left
+                        anchors.verticalCenter: parent.verticalCenter
+                        text: styleData.value
+                        //color: isCheckColumn( styleData.column )? "black": styleData.value
+                        visible: !isCheckColumn( styleData.column )
+                    }
+
+                    function isCheckColumn( columnIndex )
+                    {
+                        return tableView.getColumn( columnIndex ) === checkedColumn
+                    }
                 }
             }
         }
     }
 }
-
 
