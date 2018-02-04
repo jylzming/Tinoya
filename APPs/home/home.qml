@@ -1,7 +1,8 @@
 ﻿import QtQuick 2.0
+import QtQuick.Controls 2.1
 import QtQuick.Controls 1.4
 import QtQuick.Layouts 1.1
-
+import QtQml 2.2
 import 'qrc:/Instances/Core' as ICore
 import 'qrc:/Instances/Controls' as IControls
 
@@ -59,7 +60,7 @@ ICore.Page{
                     acceptedButtons: Qt.LeftButton
                     onReleased: {
                         console.log("lightImg click!");
-                        application.multiApplications.changeApplication("light");
+                        //application.multiApplications.changeApplication("light");
                         application.multiApplications.changeApplication("LeftBar");
                     }
                 }
@@ -78,7 +79,6 @@ ICore.Page{
                     onClicked: {
                         mouse.accepted = false
                         console.log("warningImg click!");
-                        ScoketCtl.sendData(1)
                     }
                 }
             }

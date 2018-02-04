@@ -1,0 +1,12 @@
+INPUT(
+./debug\socketT.o
+./debug\main.o
+./debug\qrc_Instances.o
+./debug\qrc_UI.o
+./debug\qrc_qml-home.o
+./debug\qrc_resources-home.o
+./debug\qrc_qml-light.o
+./debug\qrc_resources-light.o
+./debug\qrc_qml.o
+./debug\moc_socketT.o
+);
