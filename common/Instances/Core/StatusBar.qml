@@ -1,5 +1,6 @@
 ﻿import QtQuick 2.5
 import QtQuick.Window 2.0
+import QtQml 2.2
 import 'qrc:/UI/Private' as Private
 import 'qrc:/UI/Controls' as UControls
 import 'qrc:/UI/Core' as UCore
@@ -76,7 +77,9 @@ Private.Control {
                 acceptedButtons: Qt.LeftButton;
                 onClicked: {
                     console.log("Logo click!");
-
+                    multiApplications.back()
+                    //VirtualApplication.back()
+                    //application.multiApplications.changeApplication("home");
                 }
             }
         }

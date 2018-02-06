@@ -60,8 +60,8 @@ ICore.Page{
                     acceptedButtons: Qt.LeftButton
                     onReleased: {
                         console.log("lightImg click!");
-                        //application.multiApplications.changeApplication("light");
-                        application.multiApplications.changeApplication("LeftBar");
+                        application.multiApplications.changeApplication("light");
+                        //application.multiApplications.changeApplication("LeftBar");
                     }
                 }
             }
@@ -161,6 +161,7 @@ ICore.Page{
                     onReleased: {
                         console.log("carparkImg click!");
                         ScoketCtl.sendData(6)
+                        application.multiApplications.changeApplication("carpark");
                     }
                 }
             }

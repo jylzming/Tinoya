@@ -1,0 +1,6 @@
+<RCC>
+    <qresource prefix="/carpark">
+        <file>Application.qml</file>
+        <file>Carpark.qml</file>
+    </qresource>
+</RCC>

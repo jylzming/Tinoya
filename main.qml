@@ -11,7 +11,8 @@ ICore.Window{
     multiApplications {
         applications: ({
                            home: { url: Qt.resolvedUrl('home/Application.qml'), title: qsTr('主菜单') },
-                           light: { url: Qt.resolvedUrl('light/Application.qml'), title: qsTr('主菜单')}
+                           light: { url: Qt.resolvedUrl('light/Application.qml'), title: qsTr('主菜单')},
+                           carpark: { url: Qt.resolvedUrl('carpark/Application.qml'), title: qsTr('主菜单')}
                        })
         initialApplication: 'home'
     }

@@ -12,8 +12,10 @@ CONFIG += c++11
 
 HEADERS += \
     $$PWD/Socket/socketT.h \
+    $$PWD/myclient.h
 
 
 SOURCES += \
     $$PWD/Socket/socketT.cpp \
+    $$PWD/myclient.cpp
 

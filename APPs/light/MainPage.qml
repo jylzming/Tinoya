@@ -25,7 +25,7 @@ ICore.Page{
 
         WebSocket {
             id: socket
-            url: "ws://192.168.1.108:777"
+            url: "ws://192.168.1.109:777"
             active: true
             onTextMessageReceived: {
                 messageBox.text = messageBox.text + "\nReceived message: " + message
@@ -38,6 +38,7 @@ ICore.Page{
                                  messageBox.text += "\nSocket closed"
                              }
         }
+
         Text {
             id: messageBox
             height: 30
