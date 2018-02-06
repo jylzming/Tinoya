@@ -2,7 +2,10 @@
 include(config.pri)
 include(build.pri)
 
+QT += core
 QT += websockets
+QT += qml
+
 CONFIG += use_translation
 
 include(APPs/home/module-home.pri)

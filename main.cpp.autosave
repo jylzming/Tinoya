@@ -24,7 +24,7 @@ int main(int argc, char *argv[])
     engine.rootContext();
     engine.rootContext()->setContextProperty("ScoketCtl" , mscoket);
     engine.load(QUrl(QStringLiteral("qrc:/main.qml")));
-    myClient->onConnected();
+    if(myClient->onConnected())
     myClient->sendMessage("hello this ming!");
 
     return app.exec();
