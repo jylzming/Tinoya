@@ -2,6 +2,7 @@
 import QtQuick.Controls 1.4
 import QtWebSockets 1.1
 import 'qrc:/Instances/Core' as ICore
+//import SocketClient 1.0
 
 ICore.Page{
     anchors.fill: parent
@@ -23,9 +24,9 @@ ICore.Page{
         height: parent.height
         color: "#CCCCCC"
 
-        WebSocket {
+        /*WebSocket {
             id: socket
-            url: "ws://192.168.1.108:777"
+            url: "ws://192.168.1.109:777"
             active: true
             onTextMessageReceived: {
                 messageBox.text = messageBox.text + "\nReceived message: " + message
@@ -37,7 +38,8 @@ ICore.Page{
                              } else if (socket.status == WebSocket.Closed) {
                                  messageBox.text += "\nSocket closed"
                              }
-        }
+        }*/
+
         Text {
             id: messageBox
             height: 30
@@ -46,9 +48,12 @@ ICore.Page{
             MouseArea{
                 anchors.fill: parent
                 cursorShape: "PointingHandCursor"
-                onClicked: {
+                /*onClicked: {
                     socket.active = true
                     socket.sendTextMessage(qsTr("Hello Ming!\n"))
+                }*/
+                onClicked: {
+                    //MyClient.sendMessage(messageBox.text);
                 }
             }
         }
