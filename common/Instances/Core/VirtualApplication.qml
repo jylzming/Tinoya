@@ -30,8 +30,9 @@ UCore.VirtualApplication {
             multiApplications.currentApplicationChanged.disconnect(handler);
 
             var appWindow = multiApplications.appWindow;
-            var currentApplication = multiApplications.currentApplicationInfo()//.item;
+            var currentApplication = multiApplications.currentApplicationInfo().item;
             if (currentApplication) {
+                console.debug("currentApplication.currentPage: ",currentApplication)
                 var pageSettings = currentApplication.pages[currentApplication.currentPage];
 
                 if (pageSettings) {

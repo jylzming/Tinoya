@@ -13,7 +13,7 @@ Private.Control {
     anchors.left: parent.left
     height: 70
     property var appWindow: null
-    property var hideBackBtn: null
+    property bool hideBackBtn: false
     signal back
     //标题部分
     Rectangle{
@@ -68,6 +68,7 @@ Private.Control {
             anchors.leftMargin: 20
             anchors.topMargin: 10
             opacity: logoArea.containsMouse ? 0.5 : 1.0;
+            visible: !hideBackBtn
             MouseArea{
                 id: logoArea;
                 anchors.fill: parent;
@@ -76,7 +77,7 @@ Private.Control {
                 acceptedButtons: Qt.LeftButton;
                 onClicked: {
                     console.log("Logo click!");
-
+                    back()
                 }
             }
         }
