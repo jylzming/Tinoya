@@ -7,15 +7,10 @@ import 'qrc:/UI/Core' as UCore
 Private.Control {
     id: root
     width: parent.width
-    height: 80
+    height: 50
 
     property var multiApplications: null
-    property int screenIDForController
-    property int devstate
-    property int devType
-    property var devinfo
 
-    property int appidType:0
 
     Component.onCompleted: {
 
@@ -102,6 +97,4 @@ Private.Control {
             }
         }
     }
-
-
 }
