@@ -4,8 +4,8 @@ import 'qrc:/Instances/Core' as ICore
 
 UCore.Window {
     id: root
-    width: 1127
-    height: 851
+    width: 1500
+    height: 850
     minimumWidth: 1200
     minimumHeight: 851
 //    bgSource: 'qrc:/resources/BG2.jpg'
