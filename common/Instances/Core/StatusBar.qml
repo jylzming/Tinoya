@@ -13,7 +13,7 @@ Private.Control {
     anchors.left: parent.left
     height: 70
     property var appWindow: null
-    property bool hideBackBtn: false
+    property bool hideBackBtn: true
     signal back
     //标题部分
     Rectangle{
@@ -49,11 +49,11 @@ Private.Control {
             onPositionChanged: {
                 if(appWindow.visibility == Window.Windowed) {
                     var delta = Qt.point(mouse.x-clickPos.x, mouse.y-clickPos.y)
-                    console.debug("deltax = ",delta.x,"deltay = ",delta.y)
+//                    console.debug("deltax = ",delta.x,"deltay = ",delta.y)
                     appWindow.setX(appWindow.x+delta.x)
                     appWindow.setY(appWindow.y+delta.y)
-                    console.debug("appx = ",appWindow.x+delta.x,"appy = ",appWindow.y+delta.y)
-                    console.debug("titleBarw = ",titleBar.width,"titleBarh = ",titleBar.height)
+//                    console.debug("appx = ",appWindow.x+delta.x,"appy = ",appWindow.y+delta.y)
+//                    console.debug("titleBarw = ",titleBar.width,"titleBarh = ",titleBar.height)
                 }
             }
         }
@@ -68,7 +68,7 @@ Private.Control {
             anchors.leftMargin: 20
             anchors.topMargin: 10
             opacity: logoArea.containsMouse ? 0.5 : 1.0;
-            visible: !hideBackBtn
+            visible: !!hideBackBtn
             MouseArea{
                 id: logoArea;
                 anchors.fill: parent;
